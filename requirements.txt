@@ -6,4 +6,4 @@ pydub==0.25.1
 torch==2.2.0
 altair==4.2.0
 SpeechRecognition==3.8.1
-pyttsx3==2.90
+pyttsx3==2.98
