@@ -1,17 +1,14 @@
-import pyttsx3
+from gtts import gTTS
 
 def generate_speech(text):
-    """Generate speech from corrected text using pyttsx3 (offline TTS)."""
-    engine = pyttsx3.init()
-
-    # Set properties for voice (optional)
-    engine.setProperty('rate', 150)  # Speed of speech
-    engine.setProperty('volume', 1)  # Volume level (0.0 to 1.0)
-
+    """Generate speech from corrected text using gTTS (online TTS)."""
+    
+    # Set up gTTS for generating speech
+    tts = gTTS(text=text, lang='en', slow=False)  # slow=False for normal speed
+    
     output_audio_path = "static/generated_speech.mp3"
 
     # Save speech to an audio file
-    engine.save_to_file(text, output_audio_path)
-    engine.runAndWait()
-
+    tts.save(output_audio_path)
+    
     return output_audio_path
