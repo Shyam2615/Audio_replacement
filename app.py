@@ -41,5 +41,5 @@ if video_file:
     st.success("Replacing the original audio with the generated audio...")
     final_video_path = replace_audio_in_video("static/uploaded_video.mp4", generated_audio_path)
 
-    st.success("Here's the final video with the AI-generated voice:")
+    st.success("Here's the final video with the AI-generated voice...")
     st.video(final_video_path)
