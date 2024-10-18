@@ -18,28 +18,28 @@ if video_file:
     with open("static/uploaded_video.mp4", "wb") as f:
         f.write(video_file.read())
 
-    st.write("Extracting audio from video...")
+    st.success("Extracting audio from video...")
     audio_path = extract_audio("static/uploaded_video.mp4")
 
     st.audio('static/uploaded_video.mp4')
 
-    st.write("Transcribing audio using Google Speech-to-Text...")
+    st.success("Transcribing audio...")
     transcript = transcribe_audio(audio_path)
 
     st.write(transcript)
 
-    st.write("Correcting transcription using GPT-4...")
+    st.success("Correcting transcription...")
     corrected_transcription = correct_transcription(transcript)
 
-    st.success(corrected_transcription)
+    st.write(corrected_transcription)
 
-    st.write("Generating new audio using pyttsx3...")
+    st.success("Generating new audio...")
     generated_audio_path = generate_speech(corrected_transcription)
 
     st.audio(generated_audio_path)
 
-    st.write("Replacing the original audio with the generated audio...")
+    st.success("Replacing the original audio with the generated audio...")
     final_video_path = replace_audio_in_video("static/uploaded_video.mp4", generated_audio_path)
 
-    st.write("Here's the final video with the AI-generated voice:")
+    st.success("Here's the final video with the AI-generated voice:")
     st.video(final_video_path)
