@@ -2,7 +2,7 @@ import requests
 import json
 
 # Azure OpenAI settings
-azure_openai_key = "22ec84421ec24230a3638d1b51e3a7dc"
+azure_openai_key = "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"
 azure_openai_endpoint = "https://internshala.openai.azure.com/openai/deployments/gpt-4o/chat/completions?api-version=2024-08-01-preview"
 
 def correct_transcription(text):
